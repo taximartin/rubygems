@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe "bundle install with specific_platform enabled" do
+RSpec.describe "bundle install with specific platforms" do
   before do
-    bundle "config set specific_platform true"
-
     build_repo2 do
       build_gem("google-protobuf", "3.0.0.alpha.5.0.5.1")
       build_gem("google-protobuf", "3.0.0.alpha.5.0.5.1") {|s| s.platform = "x86_64-linux" }
