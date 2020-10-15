@@ -139,7 +139,7 @@ RSpec.describe "bundle add" do
     expect(err).to match("Could not find gem 'werk_it' in")
 
     bundle "add 'werk_it' -s='#{file_uri_for(gem_repo2)}'", :raise_on_error => false
-    expect(err).to match("Could not find gem 'werk_it' in rubygems repository")
+    expect(err).to match("Could not find gem 'werk_it' with platform 'ruby' in rubygems repository")
   end
 
   it "shows error message when source cannot be reached" do
